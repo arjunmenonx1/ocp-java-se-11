@@ -2,11 +2,13 @@ package labs.pm.data;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.util.Objects;
 
 import static labs.pm.data.Rating.*;
 
 
-public class Product {
+public abstract class Product {
 
     final private int id;
     final private String name;
@@ -61,17 +63,36 @@ public class Product {
         return rating;
     }
 
-    public Product applyRating(Rating newRating) {
-        return new Product(id, name, price, newRating);
+    public abstract Product applyRating(Rating newRating);
+//    {
+//        return new Product(id, name, price, newRating);
+//    }
+
+    public LocalDate getBestBefore() {
+        return LocalDate.now();
     }
 
     @Override
     public String toString() {
-        return "Product{" +
+        return
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                ", rating=" + rating +
-                '}';
+                ", discount=" + getDiscount() +
+                ", rating=" + getRating() +
+                ", bestBefore=" + getBestBefore();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id && Objects.equals(name, product.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

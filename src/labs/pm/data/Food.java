@@ -15,6 +15,17 @@ public class Food extends Product{
     }
 
     @Override
+    public BigDecimal getDiscount() {
+        // apply 10% discount rate if bestBefore date is today
+        return (bestBefore.isEqual(LocalDate.now())) ? super.getDiscount(): BigDecimal.ZERO ;
+    }
+
+    @Override
+    public Product applyRating(Rating newRating) {
+        return new Food(getId(),getName(),getPrice(),newRating,bestBefore);
+    }
+
+    @Override
     public String toString() {
         return super.toString()+", " + bestBefore;
     }
