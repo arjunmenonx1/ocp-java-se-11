@@ -4,9 +4,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Drink extends Product{
+// final keyword prevents class from being extended further. Such a class is called a leaf class in the class hierarchy
+public final class Drink extends Product{
     private LocalDate bestBefore;
-    public Drink(int id, String name, BigDecimal price, Rating rating) {
+     Drink(int id, String name, BigDecimal price, Rating rating) {
         super(id, name, price, rating);
     }
 
