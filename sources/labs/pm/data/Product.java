@@ -91,7 +91,7 @@ public sealed abstract class Product implements Rateable<Product> permits Food, 
 
     // using instanceof before casting o to Product does not cause a runtime exception in case o is cannot be cast to Product
     if (o instanceof Product product) {
-      return id == product.id && Objects.equals(name, product.name);
+      return id == product.id;
     }
     return false;
   }

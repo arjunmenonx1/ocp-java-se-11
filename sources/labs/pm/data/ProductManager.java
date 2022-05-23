@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -22,9 +23,8 @@ public class ProductManager {
   private final NumberFormat moneyFormat;
 
   private Product product;
-  private Review[] reviews = new Review[5];
-
   private Map<Product, List<Review>> products = new HashMap<>();
+
 
   public ProductManager(Locale locale) {
     this.locale = locale;
@@ -62,6 +62,7 @@ public class ProductManager {
 
   public void printProductReport(Product product) {
     List<Review> reviews = products.get(product);
+    Collections.sort(reviews);
     StringBuilder txt = new StringBuilder();
     txt.append(MessageFormat.format(resources.getString("product"),
         product.getName(), moneyFormat.format(product.getPrice()),
@@ -81,6 +82,25 @@ public class ProductManager {
       txt.append('\n');
     }
     System.out.println(txt);
+  }
+
+  public void printProductReport(int id) {
+    printProductReport(findProduct(id));
+  }
+
+  public Product findProduct(int id) {
+    Product result = null;
+    for (Product product : products.keySet()) {
+      if (product.getId() == id) {
+        result = product;
+        break;
+      }
+    }
+    return result;
+  }
+
+  public Product reviewProduct(int id, Rating rating, String comments) {
+    return reviewProduct(findProduct(id), rating, comments);
   }
 }
 
