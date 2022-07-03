@@ -12,12 +12,12 @@ public class Shop {
   public static void main(String[] args) {
     ProductManager pm = new ProductManager("en-GB");
     pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-    pm.reviewProduct(101, Rating.FOUR_STAR, "Nice hot cup of tea");
+    pm.reviewProduct(42, Rating.FOUR_STAR, "Nice hot cup of tea");
     pm.reviewProduct(101, Rating.THREE_STAR, "Ok cup of tea");
     pm.reviewProduct(101, Rating.FIVE_STAR, "Great cup of tea");
     pm.reviewProduct(101, Rating.ONE_STAR, "Horrible cup of tea");
     pm.reviewProduct(101, Rating.FOUR_STAR, "Nice hot cup of tea");
-    pm.printProductReport(101);
+//    pm.printProductReport(42);
     pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
     pm.reviewProduct(102, Rating.FOUR_STAR, "Nice hot cup of coffee");
     pm.reviewProduct(102, Rating.THREE_STAR, "Ok cup of coffee");
@@ -60,7 +60,9 @@ public class Shop {
 //    Comparator<Product> priceSorter = (p1, p2) -> p2.getPrice().compareTo(p1.getPrice());
 //    pm.printProducts(ratingSorter.thenComparing(priceSorter)); // Chaining comparators/sorters
 //---------------------------------------------------------------------------
-    pm.printProducts(p->p.getPrice().floatValue() < 2, (p1,p2)->p2.getRating().ordinal()-p1.getRating().ordinal()); // (Predicate, Comparator)
+    pm.printProducts(p -> p.getPrice().floatValue() < 2,
+        (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal()); // (Predicate, Comparator)
+    pm.getDiscounts().forEach((rating, discount) -> System.out.println(rating + "\t" + discount));
   }
 
 }
