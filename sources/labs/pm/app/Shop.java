@@ -11,13 +11,15 @@ public class Shop {
 
   public static void main(String[] args) {
     ProductManager pm = new ProductManager("en-GB");
-    pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-    pm.reviewProduct(42, Rating.FOUR_STAR, "Nice hot cup of tea");
-    pm.reviewProduct(101, Rating.THREE_STAR, "Ok cup of tea");
-    pm.reviewProduct(101, Rating.FIVE_STAR, "Great cup of tea");
-    pm.reviewProduct(101, Rating.ONE_STAR, "Horrible cup of tea");
-    pm.reviewProduct(101, Rating.FOUR_STAR, "Nice hot cup of tea");
-//    pm.printProductReport(42);
+//    pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
+    pm.parseProduct("D,101,Tea,1.99,0,2021-09-21");
+//    pm.reviewProduct(42, Rating.FOUR_STAR, "Nice hot cup of tea");
+//    pm.reviewProduct(101, Rating.THREE_STAR, "Ok cup of tea");
+//    pm.reviewProduct(101, Rating.FIVE_STAR, "Great cup of tea");
+//    pm.reviewProduct(101, Rating.ONE_STAR, "Horrible cup of tea");
+//    pm.reviewProduct(101, Rating.FOUR_STAR, "Nice hot cup of tea");
+    pm.parseReview("101,4,Nice hot cup of tea");
+    pm.printProductReport(101);
     pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
     pm.reviewProduct(102, Rating.FOUR_STAR, "Nice hot cup of coffee");
     pm.reviewProduct(102, Rating.THREE_STAR, "Ok cup of coffee");
