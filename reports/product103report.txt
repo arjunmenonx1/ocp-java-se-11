@@ -1,6 +1,6 @@
-Cake, Price: £3.99, Rating: ★★☆☆☆, Best Before: 21/09/2021
-Review: ★★★★☆	Cake Cake Cake!
-Review: ★★★☆☆	Just fine
-Review: ★★★☆☆	Needs more cream
-Review: ★☆☆☆☆	Not good at all
-Review: ★☆☆☆☆	I asked for tea again
+Cake, Price: £3.99, Rating: ☆☆☆☆☆, Best Before: 21/09/2021
+Review: ★★★★★	Perfect perfect
+Review: ★★★★☆	pleasant surprise
+Review: ★★★☆☆	i was expecting better
+Review: ★★☆☆☆	looks nice tastes bad
+Review: ★☆☆☆☆	high price low quality

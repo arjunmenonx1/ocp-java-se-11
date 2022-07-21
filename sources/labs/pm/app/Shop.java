@@ -12,14 +12,14 @@ public class Shop {
   public static void main(String[] args) {
     ProductManager pm = new ProductManager("en-GB");
 //    pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
-    pm.parseProduct("D,101,Tea,1.99,0,2021-09-21");
-    pm.parseReview("101,4,Nice hot cup of tea");
-    pm.parseReview("101,3,Ok cup of tea");
-    pm.parseReview("101,5,Great cup of tea");
-    pm.parseReview("101,1,Horrible cup of tea");
-    pm.parseReview("101,4,Nice hot cup of tea");
+//    pm.parseProduct("D,101,Tea,1.99,0,2021-09-21");
+//    pm.parseReview("101,4,Nice hot cup of tea");
+//    pm.parseReview("101,3,Ok cup of tea");
+//    pm.parseReview("101,5,Great cup of tea");
+//    pm.parseReview("101,1,Horrible cup of tea");
+//    pm.parseReview("101,4,Nice hot cup of tea");
     pm.printProductReport(101);
-    pm.parseProduct("D,102,Coffee,1.99,0,2021-09-21");
+//    pm.parseProduct("D,102,Coffee,1.99,0,2021-09-21");
 //    pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
 //    pm.reviewProduct(102, Rating.FOUR_STAR, "Nice hot cup of coffee");
 //    pm.reviewProduct(102, Rating.THREE_STAR, "Ok cup of coffee");
@@ -27,14 +27,14 @@ public class Shop {
 //    pm.reviewProduct(102, Rating.ONE_STAR, "Horrible cup of coffee");
 //    pm.reviewProduct(102, Rating.ONE_STAR, "I asked for tea");
 //    pm.printProductReport(102);
-    pm.parseProduct("F,103,Cake,3.99,0,2021-09-21");
-    pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR,
-        LocalDate.now().plusDays(2));
-    pm.reviewProduct(103, Rating.FOUR_STAR, "Cake Cake Cake!");
-    pm.reviewProduct(103, Rating.THREE_STAR, "Just fine");
-    pm.reviewProduct(103, Rating.THREE_STAR, "Needs more cream");
-    pm.reviewProduct(103, Rating.ONE_STAR, "Not good at all");
-    pm.reviewProduct(103, Rating.ONE_STAR, "I asked for tea again");
+//    pm.parseProduct("F,103,Cake,3.99,0,2021-09-21");
+//    pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR,
+//        LocalDate.now().plusDays(2));
+//    pm.reviewProduct(103, Rating.FOUR_STAR, "Cake Cake Cake!");
+//    pm.reviewProduct(103, Rating.THREE_STAR, "Just fine");
+//    pm.reviewProduct(103, Rating.THREE_STAR, "Needs more cream");
+//    pm.reviewProduct(103, Rating.ONE_STAR, "Not good at all");
+//    pm.reviewProduct(103, Rating.ONE_STAR, "I asked for tea again");
     pm.printProductReport(103);
 //    pm.createProduct(104, "Cookie", BigDecimal.valueOf(3.99), Rating.TWO_STAR,
 //        LocalDate.now());

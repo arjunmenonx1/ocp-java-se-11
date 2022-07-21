@@ -1,6 +1,6 @@
-Tea, Price: £1.99, Rating: ★★★☆☆, Best Before: 20/07/2022
-Review: ★★★★★	Great cup of tea
-Review: ★★★★☆	Nice hot cup of tea
-Review: ★★★★☆	Nice hot cup of tea
-Review: ★★★☆☆	Ok cup of tea
-Review: ★☆☆☆☆	Horrible cup of tea
+Tea, Price: £1.99, Rating: ☆☆☆☆☆, Best Before: 21/07/2022
+Review: ★★★★★	This was excellent
+Review: ★★★★☆	sweet!
+Review: ★★★☆☆	not bad meh
+Review: ★★☆☆☆	very small need more!
+Review: ★☆☆☆☆	not worth the cost
