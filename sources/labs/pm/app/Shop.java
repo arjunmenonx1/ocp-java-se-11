@@ -18,15 +18,18 @@ public class Shop {
 //    pm.parseReview("101,5,Great cup of tea");
 //    pm.parseReview("101,1,Horrible cup of tea");
 //    pm.parseReview("101,4,Nice hot cup of tea");
-    pm.printProductReport(101);
-//    pm.parseProduct("D,102,Coffee,1.99,0,2021-09-21");
-//    pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
-//    pm.reviewProduct(102, Rating.FOUR_STAR, "Nice hot cup of coffee");
-//    pm.reviewProduct(102, Rating.THREE_STAR, "Ok cup of coffee");
-//    pm.reviewProduct(102, Rating.THREE_STAR, "Nice coffee, mate!");
-//    pm.reviewProduct(102, Rating.ONE_STAR, "Horrible cup of coffee");
-//    pm.reviewProduct(102, Rating.ONE_STAR, "I asked for tea");
-//    pm.printProductReport(102);
+//
+//    pm.printProductReport(101);
+    pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
+    pm.reviewProduct(102, Rating.FOUR_STAR, "Nice hot cup of coffee");
+    pm.reviewProduct(102, Rating.THREE_STAR, "Ok cup of coffee");
+    pm.reviewProduct(102, Rating.THREE_STAR, "Nice coffee, mate!");
+    pm.reviewProduct(102, Rating.ONE_STAR, "Horrible cup of coffee");
+    pm.reviewProduct(102, Rating.ONE_STAR, "I asked for tea");
+    pm.dumpData();
+    pm.restoreData();
+    pm.printProductReport(102);
+
 //    pm.parseProduct("F,103,Cake,3.99,0,2021-09-21");
 //    pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR,
 //        LocalDate.now().plusDays(2));
@@ -35,7 +38,7 @@ public class Shop {
 //    pm.reviewProduct(103, Rating.THREE_STAR, "Needs more cream");
 //    pm.reviewProduct(103, Rating.ONE_STAR, "Not good at all");
 //    pm.reviewProduct(103, Rating.ONE_STAR, "I asked for tea again");
-    pm.printProductReport(103);
+//    pm.printProductReport(103);
 //    pm.createProduct(104, "Cookie", BigDecimal.valueOf(3.99), Rating.TWO_STAR,
 //        LocalDate.now());
 //    pm.reviewProduct(104, Rating.FOUR_STAR, "Nice and fresh");
@@ -63,8 +66,8 @@ public class Shop {
 ////    Comparator<Product> priceSorter = (p1, p2) -> p2.getPrice().compareTo(p1.getPrice());
 ////    pm.printProducts(ratingSorter.thenComparing(priceSorter)); // Chaining comparators/sorters
 ////---------------------------------------------------------------------------
-//    pm.printProducts(p -> p.getPrice().floatValue() < 2,
-//        (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal()); // (Predicate, Comparator)
+    pm.printProducts(p -> p.getPrice().floatValue() < 2,
+        (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal()); // (Predicate, Comparator)
 //    pm.getDiscounts().forEach((rating, discount) -> System.out.println(rating + "\t" + discount));
   }
 
