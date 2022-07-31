@@ -10,7 +10,7 @@ import labs.pm.data.Rating;
 public class Shop {
 
   public static void main(String[] args) {
-    ProductManager pm = new ProductManager("en-GB");
+    ProductManager pm = ProductManager.getInstance();
 //    pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
 //    pm.parseProduct("D,101,Tea,1.99,0,2021-09-21");
 //    pm.parseReview("101,4,Nice hot cup of tea");
@@ -26,9 +26,7 @@ public class Shop {
     pm.reviewProduct(102, Rating.THREE_STAR, "Nice coffee, mate!");
     pm.reviewProduct(102, Rating.ONE_STAR, "Horrible cup of coffee");
     pm.reviewProduct(102, Rating.ONE_STAR, "I asked for tea");
-    pm.dumpData();
-    pm.restoreData();
-    pm.printProductReport(102);
+    pm.printProductReport(102, "en-GB");
 
 //    pm.parseProduct("F,103,Cake,3.99,0,2021-09-21");
 //    pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR,
@@ -67,7 +65,8 @@ public class Shop {
 ////    pm.printProducts(ratingSorter.thenComparing(priceSorter)); // Chaining comparators/sorters
 ////---------------------------------------------------------------------------
     pm.printProducts(p -> p.getPrice().floatValue() < 2,
-        (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal()); // (Predicate, Comparator)
+        (p1, p2) -> p2.getRating().ordinal() - p1.getRating().ordinal(),
+        "en-GB"); // (Predicate, Comparator)
 //    pm.getDiscounts().forEach((rating, discount) -> System.out.println(rating + "\t" + discount));
   }
 
