@@ -1,15 +1,12 @@
 package labs.pm.data;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -215,7 +212,7 @@ public class ProductManager {
     return product;
   }
 
-  private void reviewProduct(Product product, Rating rating, String comments) {
+  private Product reviewProduct(Product product, Rating rating, String comments) {
     List<Review> reviews = products.get(product);
     products.remove(product, reviews);
     reviews.add(new Review(rating, comments));
@@ -227,6 +224,7 @@ public class ProductManager {
     product = product.applyRating(Rateable.convert((int) Math.round(
         reviews.stream().mapToInt(r -> r.getRating().ordinal()).average().orElse(0))));
     products.put(product, reviews);
+    return product;
   }
 
   private void printProductReport(Product product, String languageTag, String client)
@@ -301,15 +299,16 @@ public class ProductManager {
     }
   }
 
-  public void reviewProduct(int id, Rating rating, String comments) {
+  public Product reviewProduct(int id, Rating rating, String comments) {
     try {
       writeLock.lock();
-      reviewProduct(findProduct(id), rating, comments);
+      return reviewProduct(findProduct(id), rating, comments);
     } catch (ProductManagerException e) {
       logger.log(Level.SEVERE, e.getMessage());
     } finally {
       writeLock.unlock();
     }
+    return null;
   }
 
 
